@@ -60,7 +60,7 @@ NSString * const kTOLSoundCellIdentifier = @"sound-cell";
         }
     }
     
-    [[AVAudioSession sharedInstance] setCategory:@"AVAudioSessionCategoryAmbient" error:nil];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
     
     self.tableViewData = @[slides, beeps, taps];
     self.soundPlayers = @[slideSessions, beepSessions, tapSessions];

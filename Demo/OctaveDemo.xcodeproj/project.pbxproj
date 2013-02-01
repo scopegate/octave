@@ -507,6 +507,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OctaveDemo/OctaveDemo-Prefix.pch";
 				INFOPLIST_FILE = "OctaveDemo/OctaveDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = OctaveDemo;
 				WRAPPER_EXTENSION = app;
 			};
@@ -518,6 +519,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OctaveDemo/OctaveDemo-Prefix.pch";
 				INFOPLIST_FILE = "OctaveDemo/OctaveDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = OctaveDemo;
 				WRAPPER_EXTENSION = app;
 			};
