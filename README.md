@@ -16,7 +16,7 @@ Many developers lack the tools or knowledge to do sound well, and most free soun
 ##UIButton+Sound
 UIButton+Sound declares a category on UIButton that uses the magic of [associative references](http://oleb.net/blog/2011/05/faking-ivars-in-objc-categories-with-associative-references/) to allow you to create an AVAudioPlayer simply by calling:
 
-````[myButton addSoundTitled:@"mySound.aif" forControlEvents: UIControlEventsTouchUpInside]````
+````[myButton addSoundTitled:@"mySound.aif" forControlEvents: UIControlEventTouchUpInside]````
 
 This method is _very_ convenient (no need to deal with instantiating AVAudioPlayers, calling ````addTarget:```` on your audioPlayer's  ````play```` method for each sound) for the odd one-off sound, but it's probably a little bit leaky, and it's inefficient if you're playing the same sound on a number of different buttons.
 
