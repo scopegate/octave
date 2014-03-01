@@ -72,8 +72,7 @@ NSString * const kTOLSoundCellIdentifier = @"sound-cell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //play sound
-    
+    // Play sound
     AVAudioPlayer *player = self.soundPlayers[indexPath.section][indexPath.row];
     [player play];
     
