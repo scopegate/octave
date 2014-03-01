@@ -16,7 +16,7 @@ Many developers lack the tools or knowledge to do sound well, and most free soun
 ## UIControl+Sound
 UIControl+Sound declares a category on UIControl that uses the magic of [associative references](http://oleb.net/blog/2011/05/faking-ivars-in-objc-categories-with-associative-references/) to allow you to create an AVAudioPlayer simply by calling:
 
-````[myControl setSoundNamed:@“mySound.aif" forControlEvent:UIControlEventTouchUpInside]````
+````[myControl setSoundNamed:@“mySound.aif” forControlEvent:UIControlEventTouchUpInside]````
 
 This method is _very_ convenient (no need to deal with instantiating AVAudioPlayers, calling ````addTarget:```` on your audioPlayer's  ````play```` method for each sound) for the odd one-off sound, but it's probably a little bit leaky, and it's inefficient if you're playing the same sound on a number of different controls.
 
