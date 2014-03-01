@@ -9,7 +9,7 @@
 #import "TOLViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
-typedef NS_ENUM(NSInteger, TOLSoundType){
+typedef NS_ENUM(NSInteger, TOLSoundType) {
     TOLSoundTypeSlide,
     TOLSoundTypeBeeps,
     TOLSoundTypeTaps
