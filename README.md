@@ -1,4 +1,4 @@
-OCTAVE
+Octave
 ======
 _A free library of UI sounds, handmade for iOS_  
 http://www.raisedbeaches.com/octave
