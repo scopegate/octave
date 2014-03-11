@@ -9,7 +9,7 @@
 #import "TOLViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
-typedef NS_ENUM(NSInteger, TOLSoundType){
+typedef NS_ENUM(NSInteger, TOLSoundType) {
     TOLSoundTypeSlide,
     TOLSoundTypeBeeps,
     TOLSoundTypeTaps
@@ -40,7 +40,6 @@ NSString * const kTOLSoundCellIdentifier = @"sound-cell";
     
     NSArray *allSounds = [[NSBundle mainBundle] pathsForResourcesOfType:@"aif" inDirectory:nil];
     for (NSString *soundReference in allSounds) {
-        
         NSURL *soundURL = [NSURL fileURLWithPath:soundReference];
         NSError *error = nil;
         AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
@@ -49,12 +48,10 @@ NSString * const kTOLSoundCellIdentifier = @"sound-cell";
         if ([soundReference rangeOfString:@"beep"].length > 0) {
             [beeps addObject:soundReference];
             [beepSessions addObject:audioPlayer];
-        }
-        else if([soundReference rangeOfString:@"slide"].length > 0){
+        } else if ([soundReference rangeOfString:@"slide"].length > 0) {
             [slides addObject:soundReference];
             [slideSessions addObject:audioPlayer];
-        }
-        else{
+        } else {
             [taps addObject:soundReference];
             [tapSessions addObject:audioPlayer];
         }
@@ -68,28 +65,32 @@ NSString * const kTOLSoundCellIdentifier = @"sound-cell";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kTOLSoundCellIdentifier];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     return [tableView dequeueReusableCellWithIdentifier:kTOLSoundCellIdentifier forIndexPath:indexPath];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //play sound
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Play sound
     AVAudioPlayer *player = self.soundPlayers[indexPath.section][indexPath.row];
     [player play];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return self.tableViewData.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return [self.tableViewData[section] count];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
     switch ((TOLSoundType)section) {
         case TOLSoundTypeSlide:
             return @"Slides";
@@ -103,12 +104,16 @@ NSString * const kTOLSoundCellIdentifier = @"sound-cell";
     }
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
     cell.textLabel.text = [self soundNameFromPath:self.tableViewData[indexPath.section][indexPath.row]];
 }
 
+
 #pragma mark - Helpers
-- (NSString *)soundNameFromPath:(NSString *)path{
+
+- (NSString *)soundNameFromPath:(NSString *)path
+{
     NSString *fileName = [[path lastPathComponent] stringByDeletingPathExtension];
     NSString *soundName = [[fileName componentsSeparatedByString:@"-"] lastObject];
     
