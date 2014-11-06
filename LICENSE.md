@@ -1,6 +1,6 @@
 LICENSE
 ======
-You are free to use Octave (the "sound set") or any part thereof (the "sounds") in any personal, open-source or commercial work without obligation of payment (monetary or otherwise) or attribution. Do not sell the icon set, host the icon set or rent the icon set (either in existing or modified form).
+You are free to use Octave (the "sound set") or any part thereof (the "sounds") in any personal, open-source or commercial work without obligation of payment (monetary or otherwise) or attribution. Do not sell the sound set, host the sound set or rent the sound set (either in existing or modified form).
 
 While attribution is optional, it is always appreciated.
 
